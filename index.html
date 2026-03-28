@@ -9,7 +9,7 @@
     <title>Viboothi Balasooriya</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Sora:wght@300;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -19,6 +19,7 @@
       <div class="loader-logo">
         <span class="loader-initials">VB</span>
         <div class="loader-bar"><div class="loader-fill"></div></div>
+        <span class="loader-text">Loading Portfolio</span>
       </div>
     </div>
 
@@ -29,23 +30,18 @@
       <div class="orb orb-left"></div>
       <div class="orb orb-right"></div>
 
+      <!-- Top navigation bar -->
+      <header class="top-bar" id="topBar">
+        <div class="top-mono">VB</div>
+        <div class="top-center-label">Portfolio · 2026</div>
+        <div class="top-hint" id="scrollHint">
+          <span>Hover to explore</span>
+          <div class="hint-line"></div>
+        </div>
+      </header>
+
       <!-- Divider line -->
       <div class="divider"></div>
-
-      <!-- Center name card -->
-      <div class="user-card" id="userCard">
-        <div class="card-inner">
-          <div class="card-badge">Portfolio</div>
-          <h2 class="card-name">Viboothi<br><span>Balasooriya</span></h2>
-          <p class="card-sub">Undergraduate · RUSL · Faculty of Applied Sciences</p>
-          <div class="card-line"></div>
-          <div class="card-tags">
-            <span class="tag tag-dev">Dev</span>
-            <span class="tag-dot">·</span>
-            <span class="tag tag-des">Design</span>
-          </div>
-        </div>
-      </div>
 
       <!-- Left Split — Developer -->
       <div class="split left" id="splitLeft">
@@ -56,7 +52,7 @@
           <h1 class="split-title">
             <span>D</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>e</span><span>r</span>
           </h1>
-          <p class="split-desc">Web apps, full-stack projects & creative code experiments.</p>
+          <p class="split-desc">Web apps, full-stack projects &amp; creative code experiments.</p>
           <a href="pages/developer.html" class="btn btn-left" id="btnLeft">
             <span class="btn-text">View Projects</span>
             <span class="btn-arrow">→</span>
@@ -74,7 +70,7 @@
           <h1 class="split-title">
             <span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span><span>e</span><span>r</span>
           </h1>
-          <p class="split-desc">UI/UX, visual identities & design system work.</p>
+          <p class="split-desc">UI/UX, visual identities &amp; design system work.</p>
           <a href="pages/designer.html" class="btn btn-right" id="btnRight">
             <span class="btn-text">View Projects</span>
             <span class="btn-arrow">→</span>
@@ -83,10 +79,23 @@
         <div class="corner-label corner-tr">02</div>
       </div>
 
-      <!-- Scroll hint -->
-      <div class="scroll-hint" id="scrollHint">
-        <span>Hover to explore</span>
-        <div class="scroll-line"></div>
+      <!-- Bottom name pill -->
+      <div class="name-pill" id="namePill">
+        <div class="pill-inner">
+          <div class="pill-badge">Portfolio</div>
+          <div class="pill-divider"></div>
+          <div class="pill-name">
+            <span class="pill-first">Viboothi</span>
+            <span class="pill-last">Balasooriya</span>
+          </div>
+          <div class="pill-divider"></div>
+          <div class="pill-tags">
+            <span class="tag tag-dev">Dev</span>
+            <span class="tag-sep">·</span>
+            <span class="tag tag-des">Design</span>
+          </div>
+        </div>
+        <p class="pill-sub">Undergraduate · RUSL · Faculty of Applied Sciences</p>
       </div>
 
     </div>

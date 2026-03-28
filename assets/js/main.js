@@ -45,3 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Optional: add slight mousemove parallax on the container if we want extra flair
     // for now sticking to the robust CSS driven split layout
 });
+
+// Fix for Browser Back Button (Back-Forward Cache)
+window.addEventListener('pageshow', (event) => {
+    // When returning to this page from another page via 'Back' button
+    if (event.persisted) {
+        const container = document.getElementById('container');
+        if (container) {
+            // Remove any stuck hover states
+            container.classList.remove('hover-left');
+            container.classList.remove('hover-right');
+        }
+        
+        // Ensure loader is hidden in case it glitches
+        const loader = document.getElementById('loader');
+        if (loader) {
+            loader.classList.add('hidden');
+        }
+    }
+});
