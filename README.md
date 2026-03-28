@@ -5,7 +5,7 @@ A premium, responsive portfolio featuring dual-role experiences: **Full Stack De
 ---
 
 ## 🌟 Live Demo
-🔗 [vibothibalasooriya.me](https://vibothibalasooriya.me)
+🔗https://viboothibalasooriya.github.io/Portfolio/
 
 ---
 
