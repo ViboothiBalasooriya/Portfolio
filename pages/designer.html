@@ -4,139 +4,215 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Viboothi Balasooriya — UI/UX Designer. Explore UI/UX, visual identities and design system work." />
     <link rel="icon" type="image/png" href="../assets/images/Verify.png" />
-    <title>Designer</title>
+    <title>Designer — Viboothi Balasooriya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/designer.css" />
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="nav-content">
-        <div class="logo">Viboothi Balasooriya</div>
-        <div>
-          <ul class="nav-links">
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
+
+    <!-- Noise texture overlay -->
+    <div class="noise"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <a href="../index.html" class="nav-back" id="navBack">
+        <span class="nav-back-arrow">←</span>
+        <span>Back</span>
+      </a>
+      <div class="nav-mono">VB</div>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="nav-content">
-        <div class="logo">Viboothi Balasooriya</div>
-        <div class="hamburger-menu">
-          <div class="hamburger-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="menu-links">
-            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-          </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-glow"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow" id="heroEyebrow">UI / UX Designer</p>
+        <h1 class="hero-title" id="heroTitle">
+          <span class="hero-title-line">Crafting</span>
+          <span class="hero-title-line accent">Beautiful</span>
+          <span class="hero-title-line">Interfaces.</span>
+        </h1>
+        <p class="hero-desc" id="heroDesc">
+          UI/UX design, visual identities &amp; design systems — where creativity meets function.
+        </p>
+        <div class="hero-actions" id="heroActions">
+          <a href="#projects" class="btn-primary">View Work <span>↓</span></a>
+          <a href="https://www.behance.net/vibothibalasooriya" target="_blank" class="btn-ghost">Behance <span>↗</span></a>
+        </div>
+        <div class="hero-socials" id="heroSocials">
+          <a href="https://www.behance.net/vibothibalasooriya" target="_blank" class="social-link" title="Behance">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-3h3.457c-.073-1.580-.862-2.022-1.739-2.022-.924 0-1.619.516-1.718 2.022zM9.17 6.967c1.745 0 3.027.832 3.27 2.528H10.2c-.199-.865-.773-1.042-1.462-1.042-.991 0-1.597.679-1.597 2.361v.628c0 1.679.624 2.348 1.617 2.348.713 0 1.326-.241 1.499-1.176H12.3c-.319 1.814-1.603 2.529-3.217 2.529C6.519 15.143 5 13.523 5 11.444v-.672C5 8.404 6.638 6.967 9.17 6.967z"/></svg>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" class="social-link" title="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:viboothi.balasooriya@gmail.com" class="social-link" title="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.907 1.528-1.148C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          </a>
         </div>
       </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/dpp.png" alt="Viboothi profile picture" />
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Viboothi</h1>
-        <p class="section__text__p2">UI/UX Designer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('#')"
-          >
-            Download CV
-          </button>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="section-header">
+        <p class="section-eyebrow">Selected Work</p>
+        <h2 class="section-title">Designs</h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Design 1 -->
+        <div class="project-card" id="proj1">
+          <div class="project-card-inner">
+            <div class="project-number">01</div>
+            <div class="project-meta">
+              <span class="project-tag">UI/UX</span>
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Branding</span>
+            </div>
+            <h3 class="project-name">Design Concept One</h3>
+            <p class="project-desc">A comprehensive UI/UX design project featuring user flow diagrams, wireframes, high-fidelity mockups, and a complete design system.</p>
+            <div class="project-actions">
+              <a href="#" class="proj-btn" target="_blank">Case Study <span>↗</span></a>
+              <a href="#" class="proj-btn proj-btn-accent" target="_blank">Figma <span>↗</span></a>
+            </div>
+          </div>
+          <div class="project-card-glow"></div>
         </div>
-        <div id="socials-container">
-          <img
-            src="../assets/images/designer/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/'"
-          />
-          <img
-            src="../assets/images/designer/behance.png"
-            alt="My Behance profile"
-            class="icon"
-            onclick="location.href='https://www.behance.net/vibothibalasooriya'"
-          />
+
+        <!-- Design 2 -->
+        <div class="project-card" id="proj2">
+          <div class="project-card-inner">
+            <div class="project-number">02</div>
+            <div class="project-meta">
+              <span class="project-tag">Mobile App</span>
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Prototyping</span>
+            </div>
+            <h3 class="project-name">Design Concept Two</h3>
+            <p class="project-desc">A mobile-first design concept with interactive prototypes, accessibility considerations, and a modern component library built in Figma.</p>
+            <div class="project-actions">
+              <a href="#" class="proj-btn" target="_blank">Case Study <span>↗</span></a>
+              <a href="#" class="proj-btn proj-btn-accent" target="_blank">Figma <span>↗</span></a>
+            </div>
+          </div>
+          <div class="project-card-glow"></div>
+        </div>
+
+        <!-- Design 3 -->
+        <div class="project-card" id="proj3">
+          <div class="project-card-inner">
+            <div class="project-number">03</div>
+            <div class="project-meta">
+              <span class="project-tag">Visual Identity</span>
+              <span class="project-tag">Behance</span>
+              <span class="project-tag">Typography</span>
+            </div>
+            <h3 class="project-name">Design Concept Three</h3>
+            <p class="project-desc">A brand identity project covering logo design, color palette, typography system, and brand guidelines for a modern digital product.</p>
+            <div class="project-actions">
+              <a href="#" class="proj-btn" target="_blank">Behance <span>↗</span></a>
+              <a href="#" class="proj-btn proj-btn-accent" target="_blank">Figma <span>↗</span></a>
+            </div>
+          </div>
+          <div class="project-card-glow"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="section-header">
+        <p class="section-eyebrow">Toolbox</p>
+        <h2 class="section-title">Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3 class="skill-group-title">Design</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">UI Design</span>
+            <span class="skill-tag">UX Research</span>
+            <span class="skill-tag">Wireframing</span>
+            <span class="skill-tag">Prototyping</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Adobe XD</span>
+            <span class="skill-tag">Photoshop</span>
+            <span class="skill-tag">Illustrator</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">Craft</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Typography</span>
+            <span class="skill-tag">Color Theory</span>
+            <span class="skill-tag">Design Systems</span>
+            <span class="skill-tag">Accessibility</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="projects">
-      <p class="section__text__p1">View My Latest</p>
-      <h1 class="title">Projects</h1>
-
-      <div class="experience-details-container">
-        <div class="about-containers">
-          
-          <!-- Design 1 -->
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/project-1.png" alt="Design 1" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Design Concept One</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn b1" onclick="location.href='#'">Case Study</button>
-              <button class="btn btn-color-2 project-btn b1" onclick="location.href='#'">Figma</button>
-            </div>
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-title">Contact</h2>
+      </div>
+      <div class="contact-grid">
+        <a href="mailto:viboothi.balasooriya@gmail.com" class="contact-card">
+          <div class="contact-icon">✉</div>
+          <div class="contact-info">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">viboothi.balasooriya@gmail.com</span>
           </div>
-
-          <!-- Design 2 -->
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/project-2.png" alt="Design 2" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Design Concept Two</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn b1" onclick="location.href='#'">Case Study</button>
-              <button class="btn btn-color-2 project-btn b1" onclick="location.href='#'">Figma</button>
-            </div>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a href="https://www.behance.net/vibothibalasooriya" target="_blank" class="contact-card">
+          <div class="contact-icon">Be</div>
+          <div class="contact-info">
+            <span class="contact-label">Behance</span>
+            <span class="contact-value">vibothibalasooriya</span>
           </div>
-
-        </div>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" class="contact-card">
+          <div class="contact-icon">in</div>
+          <div class="contact-info">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">Viboothi Balasooriya</span>
+          </div>
+          <span class="contact-arrow">↗</span>
+        </a>
       </div>
     </section>
 
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="../assets/images/designer/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p>
-            <a href="mailto:viboothi.balasooriya@gmail.com">viboothi.balasooriya@gmail.com</a>
-          </p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="../assets/images/designer/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <p>Copyright &#169; 2025 Viboothi Balasooriya. All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026 Viboothi Balasooriya. All Rights Reserved.</p>
+      <a href="../index.html" class="footer-back">← Back to Portfolio</a>
     </footer>
 
-    <!-- gsap part eka -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
     <script src="../assets/js/designer.js"></script>
   </body>
 </html>
