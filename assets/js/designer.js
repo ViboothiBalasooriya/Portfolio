@@ -1,6 +1,15 @@
 // Designer page — GSAP animations
 gsap.registerPlugin(ScrollTrigger);
 
+// Hide loader after page loads
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const loader = document.getElementById('loader');
+        if (loader) loader.classList.add('hidden');
+    }, 1800);
+});
+
+
 // Hero animations timeline
 const tl = gsap.timeline({ delay: 0.3 });
 
