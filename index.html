@@ -4,28 +4,93 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="assets/images/Verify.png">
+    <meta name="description" content="Viboothi Balasooriya — Developer & Designer. Explore a portfolio that lives at the intersection of code and creativity." />
+    <link rel="icon" type="image/png" href="assets/images/Verify.png" />
     <title>Viboothi Balasooriya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Sora:wght@300;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
-    <!--container-->
-    <div class="container">
-      <div class="user-card">
-        <h2>Viboothi Balasooriya</h2>
-        <p>Undergraduate at Faculty of Applied Sciences, Rajarata University of Sri Lanka</p>
-      </div>
-      <!--split-->
-      <div class="split left">
-        <h1>Developer</h1>
-        <a href="pages/developer.html" class="btn btnleft">Projects</a>
-      </div>
-      <!--split-->
-      <div class="split right">
-        <h1>designer</h1>
-        <a href="pages/designer.html" class="btn btnright">Projects</a>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+      <div class="loader-logo">
+        <span class="loader-initials">VB</span>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
       </div>
     </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+
+      <!-- Ambient glow orbs -->
+      <div class="orb orb-left"></div>
+      <div class="orb orb-right"></div>
+
+      <!-- Divider line -->
+      <div class="divider"></div>
+
+      <!-- Center name card -->
+      <div class="user-card" id="userCard">
+        <div class="card-inner">
+          <div class="card-badge">Portfolio</div>
+          <h2 class="card-name">Viboothi<br><span>Balasooriya</span></h2>
+          <p class="card-sub">Undergraduate · RUSL · Faculty of Applied Sciences</p>
+          <div class="card-line"></div>
+          <div class="card-tags">
+            <span class="tag tag-dev">Dev</span>
+            <span class="tag-dot">·</span>
+            <span class="tag tag-des">Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left Split — Developer -->
+      <div class="split left" id="splitLeft">
+        <div class="split-bg"></div>
+        <div class="split-overlay"></div>
+        <div class="split-content">
+          <p class="split-eyebrow">Explore my</p>
+          <h1 class="split-title">
+            <span>D</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>e</span><span>r</span>
+          </h1>
+          <p class="split-desc">Web apps, full-stack projects & creative code experiments.</p>
+          <a href="pages/developer.html" class="btn btn-left" id="btnLeft">
+            <span class="btn-text">View Projects</span>
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+        <div class="corner-label corner-tl">01</div>
+      </div>
+
+      <!-- Right Split — Designer -->
+      <div class="split right" id="splitRight">
+        <div class="split-bg"></div>
+        <div class="split-overlay"></div>
+        <div class="split-content">
+          <p class="split-eyebrow">Explore my</p>
+          <h1 class="split-title">
+            <span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span><span>e</span><span>r</span>
+          </h1>
+          <p class="split-desc">UI/UX, visual identities & design system work.</p>
+          <a href="pages/designer.html" class="btn btn-right" id="btnRight">
+            <span class="btn-text">View Projects</span>
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+        <div class="corner-label corner-tr">02</div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="scroll-hint" id="scrollHint">
+        <span>Hover to explore</span>
+        <div class="scroll-line"></div>
+      </div>
+
+    </div>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>
