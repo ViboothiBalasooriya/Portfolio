@@ -1,78 +1,79 @@
-function toggleMenu() {
-  const menu = document.querySelector(".menu-links");
-  const icon = document.querySelector(".hamburger-icon");
-  menu.classList.toggle("open");
-  icon.classList.toggle("open");
-}
-
-
-
-
-
-// gsap part eka
-
+// Designer page — GSAP animations
 gsap.registerPlugin(ScrollTrigger);
 
-  gsap.utils.toArray(".details-container").forEach((card, index) => {
-    gsap.from(card, {
-      scrollTrigger: {
-        trigger: card,
-        start: "top 98%",
-      },
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      delay: index * 0.2,
-      ease: "power2.out"
-    });
-  });
+// Hero animations timeline
+const tl = gsap.timeline({ delay: 0.3 });
 
-  document.querySelectorAll(".details-container, .contact-info-upper-container").forEach((card) => {
-  card.style.transformStyle = "preserve-3d";
-  card.style.perspective = "1000px";
+tl.to('.hero-eyebrow', {
+    opacity: 1, y: 0, duration: 0.8, ease: 'power3.out'
+})
+.to('.hero-title-line', {
+    opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.15
+}, '-=0.4')
+.to('.hero-desc', {
+    opacity: 1, y: 0, duration: 0.8, ease: 'power3.out'
+}, '-=0.5')
+.to('.hero-actions', {
+    opacity: 1, y: 0, duration: 0.7, ease: 'power3.out'
+}, '-=0.4')
+.to('.hero-socials', {
+    opacity: 1, y: 0, duration: 0.7, ease: 'power3.out'
+}, '-=0.4');
 
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left; // Mouse X inside card
-    const y = e.clientY - rect.top;  // Mouse Y inside card
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = -(y - centerY) / 15;
-    const rotateY = (x - centerX) / 15;
-
+// Project cards scroll reveal
+gsap.utils.toArray('.project-card').forEach((card, i) => {
     gsap.to(card, {
-      rotationX: rotateX,
-      rotationY: rotateY,
-      scale: 1.03,
-      transformPerspective: 1000,
-      ease: "power2.out",
-      duration: 0.4,
+        scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            once: true
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        delay: i * 0.15,
+        ease: 'power2.out'
     });
-  });
-
-  card.addEventListener("mouseleave", () => {
-    gsap.to(card, {
-      rotationX: 0,
-      rotationY: 0,
-      scale: 1,
-      ease: "power2.out",
-      duration: 0.6,
-    });
-  });
 });
 
+// Skills scroll reveal
+gsap.utils.toArray('.skill-group').forEach((group, i) => {
+    gsap.to(group, {
+        scrollTrigger: {
+            trigger: group,
+            start: 'top 88%',
+            once: true
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        delay: i * 0.12,
+        ease: 'power2.out'
+    });
+});
 
+// Contact cards scroll reveal
+gsap.utils.toArray('.contact-card').forEach((card, i) => {
+    gsap.to(card, {
+        scrollTrigger: {
+            trigger: card,
+            start: 'top 90%',
+            once: true
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        delay: i * 0.1,
+        ease: 'power2.out'
+    });
+});
 
-  gsap.from(".section__text__p1, .section__text, .title, .section__pic-container", {
-    scrollTrigger: {
-      trigger: ".section__text__p1",
-      start: "top 90%",
-    },
-    opacity: 0,
-    y: 50,
-    duration: 2.5,
-    ease: "power2.out"
-  });
-
+// Navbar scroll-shadow
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(0,0,0,0.9)';
+    } else {
+        navbar.style.background = 'rgba(0,0,0,0.6)';
+    }
+});
