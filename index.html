@@ -26,17 +26,26 @@
     <!-- Main Container (Hero Split) -->
     <section class="hero-container" id="container">
 
-      <!-- Ambient glow orbs -->
-      <div class="orb orb-left"></div>
-      <div class="orb orb-right"></div>
+      <!-- Removed Ambient glow orbs as requested -->
 
       <!-- Top navigation bar -->
       <header class="top-bar" id="topBar">
-        <div class="top-mono">VB</div>
+        <div class="top-left">
+          <div class="top-mono">VB</div>
+        </div>
+        
         <div class="top-center-label">Portfolio · 2026</div>
-        <div class="top-hint" id="scrollHint">
-          <span>Hover to explore</span>
-          <div class="hint-line"></div>
+        
+        <div class="top-right">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          
+          <div class="top-hint" id="scrollHint">
+            <span>Hover to explore</span>
+            <div class="hint-line"></div>
+          </div>
         </div>
       </header>
 
@@ -98,6 +107,57 @@
         <p class="pill-sub">Undergraduate · RUSL · Faculty of Applied Sciences</p>
       </div>
 
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" id="scrollIndicator">
+        <div class="mouse"></div>
+        <span class="scroll-text">Scroll Down</span>
+      </div>
+
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <!-- Left Side: Image -->
+        <div class="about-image-split">
+          <div class="about-image-wrapper">
+            <div class="about-glow about-glow-blue"></div>
+            <div class="about-glow about-glow-pink"></div>
+            <!-- Please save your uploaded image as 'profile.jpg' in the assets/images folder -->
+            <img src="assets/images/profile.jpg" alt="Viboothi Balasooriya" class="about-image" />
+          </div>
+        </div>
+        
+        <!-- Right Side: Content -->
+        <div class="about-content-split">
+          <p class="roadmap-eyebrow">Discover</p>
+          <h2 class="roadmap-title about-title">About Me</h2>
+          <p class="about-desc">
+            Hi, I'm Viboothi Balasooriya. I am a passionate creator bridging the gap between 
+            elegant code and intuitive design. Currently an undergraduate at the Rajarata 
+            University of Sri Lanka, I specialize in full-stack web development and UI/UX design.
+          </p>
+          <p class="about-desc">
+            My journey is driven by a deep curiosity to build digital experiences that are not 
+            only highly functional but also visually striking. Whether I'm crafting complex backend 
+            architectures or polishing pixel-perfect frontends, I strive for excellence in every detail.
+          </p>
+          <div class="about-stats">
+            <div class="stat-box">
+              <span class="stat-number">#</span>
+              <span class="stat-label">Web Dev</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">#</span>
+              <span class="stat-label">UI / UX</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">#</span>
+              <span class="stat-label">Creative Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Education Roadmap Section -->
@@ -105,6 +165,7 @@
       <div class="roadmap-header">
         <p class="roadmap-eyebrow">The Journey</p>
         <h2 class="roadmap-title">Education</h2>
+        <p class="roadmap-subtitle">My academic milestones and qualifications</p>
       </div>
       <div class="roadmap-container">
         <!-- Connecting Vertical Line -->
@@ -112,42 +173,188 @@
           <div class="roadmap-line-progress"></div>
         </div>
 
-        <!-- Node 1 -->
+        <!-- Node 1 — University -->
         <div class="roadmap-item">
           <div class="roadmap-node">
             <div class="node-glow"></div>
             <div class="node-dot"></div>
+            <div class="node-ring"></div>
           </div>
           <div class="roadmap-content">
-            <div class="roadmap-year">2023 — Present</div>
-            <h3 class="roadmap-degree">BSc (Hons) in Information Technology</h3>
-            <p class="roadmap-place">Rajarata University of Sri Lanka (RUSL) - Faculty of Applied Sciences</p>
+            <div class="roadmap-card-top">
+              <div class="roadmap-year">2023 — Present</div>
+              <span class="roadmap-badge badge-active">In Progress</span>
+            </div>
+            <div class="roadmap-icon-row">
+              <div class="roadmap-icon">🎓</div>
+              <div>
+                <h3 class="roadmap-degree">BSc (Hons) in Information Technology</h3>
+                <p class="roadmap-place">Rajarata University of Sri Lanka (RUSL) — Faculty of Applied Sciences</p>
+              </div>
+            </div>
+            <p class="roadmap-desc">Specializing in software engineering, web technologies, database systems, and AI/ML fundamentals. Currently in my undergraduate studies.</p>
+            <div class="roadmap-tags">
+              <span class="roadmap-tag">Software Engineering</span>
+              <span class="roadmap-tag">Web Dev</span>
+              <span class="roadmap-tag">Database Systems</span>
+              <span class="roadmap-tag">AI / ML</span>
+            </div>
           </div>
         </div>
 
-        <!-- Node 2 -->
+        <!-- Node 2 — A/L -->
         <div class="roadmap-item">
           <div class="roadmap-node">
             <div class="node-glow"></div>
             <div class="node-dot"></div>
+            <div class="node-ring"></div>
           </div>
           <div class="roadmap-content">
-            <div class="roadmap-year">2021</div>
-            <h3 class="roadmap-degree">G.C.E. Advanced Level</h3>
-            <p class="roadmap-place">Physical Science Stream</p>
+            <div class="roadmap-card-top">
+              <div class="roadmap-year">2021</div>
+              <span class="roadmap-badge badge-complete">Completed</span>
+            </div>
+            <div class="roadmap-icon-row">
+              <div class="roadmap-icon">📐</div>
+              <div>
+                <h3 class="roadmap-degree">G.C.E. Advanced Level</h3>
+                <p class="roadmap-place">Physical Science Stream</p>
+              </div>
+            </div>
+            <p class="roadmap-desc">Completed the Physical Science stream covering Combined Mathematics, Physics, and Chemistry. Built a strong analytical and problem-solving foundation.</p>
+            <div class="roadmap-tags">
+              <span class="roadmap-tag">Mathematics</span>
+              <span class="roadmap-tag">Physics</span>
+              <span class="roadmap-tag">Chemistry</span>
+            </div>
           </div>
         </div>
 
-        <!-- Node 3 -->
+        <!-- Node 3 — O/L -->
         <div class="roadmap-item">
           <div class="roadmap-node">
             <div class="node-glow"></div>
             <div class="node-dot"></div>
+            <div class="node-ring"></div>
           </div>
           <div class="roadmap-content">
-            <div class="roadmap-year">2018</div>
-            <h3 class="roadmap-degree">G.C.E. Ordinary Level</h3>
-            <p class="roadmap-place">Passed with Distinctions</p>
+            <div class="roadmap-card-top">
+              <div class="roadmap-year">2018</div>
+              <span class="roadmap-badge badge-complete">Completed</span>
+            </div>
+            <div class="roadmap-icon-row">
+              <div class="roadmap-icon">📝</div>
+              <div>
+                <h3 class="roadmap-degree">G.C.E. Ordinary Level</h3>
+                <p class="roadmap-place">Passed with Distinctions</p>
+              </div>
+            </div>
+            <p class="roadmap-desc">Achieved excellent results across all subjects, demonstrating a well-rounded academic foundation and discipline.</p>
+            <div class="roadmap-tags">
+              <span class="roadmap-tag">9 Subjects</span>
+              <span class="roadmap-tag">Distinctions</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Working Experience Section -->
+    <section class="experience-section" id="experience">
+      <div class="roadmap-header">
+        <p class="roadmap-eyebrow exp-eyebrow">Career Path</p>
+        <h2 class="roadmap-title">Working Experience</h2>
+        <p class="roadmap-subtitle">Professional roles and contributions</p>
+      </div>
+      <div class="experience-container">
+        <!-- Connecting Vertical Line -->
+        <div class="experience-line">
+          <div class="experience-line-progress"></div>
+        </div>
+
+        <!-- Experience Node 1 -->
+        <div class="exp-item">
+          <div class="exp-node">
+            <div class="exp-node-glow"></div>
+            <div class="exp-node-dot"></div>
+            <div class="exp-node-ring"></div>
+          </div>
+          <div class="exp-content">
+            <div class="exp-card-top">
+              <div class="exp-year">2024 — Present</div>
+              <span class="roadmap-badge badge-active">Current</span>
+            </div>
+            <div class="exp-icon-row">
+              <div class="exp-icon">💻</div>
+              <div>
+                <h3 class="exp-role">Freelance Web Developer & Designer</h3>
+                <p class="exp-company">Self-Employed</p>
+              </div>
+            </div>
+            <p class="exp-desc">Building custom web applications and UI/UX designs for clients. Specializing in responsive, modern frontends with clean code architecture.</p>
+            <div class="exp-highlights">
+              <div class="exp-highlight-item">
+                <span class="exp-highlight-icon">✦</span>
+                <span>Full-stack web application development</span>
+              </div>
+              <div class="exp-highlight-item">
+                <span class="exp-highlight-icon">✦</span>
+                <span>UI/UX design & prototyping</span>
+              </div>
+              <div class="exp-highlight-item">
+                <span class="exp-highlight-icon">✦</span>
+                <span>Client collaboration & project delivery</span>
+              </div>
+            </div>
+            <div class="roadmap-tags exp-tags">
+              <span class="roadmap-tag">HTML / CSS / JS</span>
+              <span class="roadmap-tag">React</span>
+              <span class="roadmap-tag">PHP</span>
+              <span class="roadmap-tag">Figma</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Node 2 -->
+        <div class="exp-item">
+          <div class="exp-node">
+            <div class="exp-node-glow"></div>
+            <div class="exp-node-dot"></div>
+            <div class="exp-node-ring"></div>
+          </div>
+          <div class="exp-content">
+            <div class="exp-card-top">
+              <div class="exp-year">2023 — Present</div>
+              <span class="roadmap-badge badge-active">Ongoing</span>
+            </div>
+            <div class="exp-icon-row">
+              <div class="exp-icon">🎨</div>
+              <div>
+                <h3 class="exp-role">University Projects & Open Source</h3>
+                <p class="exp-company">Rajarata University of Sri Lanka</p>
+              </div>
+            </div>
+            <p class="exp-desc">Contributing to academic and open-source projects, building real-world applications as part of coursework and personal development.</p>
+            <div class="exp-highlights">
+              <div class="exp-highlight-item">
+                <span class="exp-highlight-icon">✦</span>
+                <span>Recipe sharing platform (PHP + MySQL)</span>
+              </div>
+              <div class="exp-highlight-item">
+                <span class="exp-highlight-icon">✦</span>
+                <span>Expense tracker application</span>
+              </div>
+              <div class="exp-highlight-item">
+                <span class="exp-highlight-icon">✦</span>
+                <span>Personal portfolio website</span>
+              </div>
+            </div>
+            <div class="roadmap-tags exp-tags">
+              <span class="roadmap-tag">PHP / MySQL</span>
+              <span class="roadmap-tag">JavaScript</span>
+              <span class="roadmap-tag">Git / GitHub</span>
+            </div>
           </div>
         </div>
 

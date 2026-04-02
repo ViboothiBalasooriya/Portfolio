@@ -25,31 +25,64 @@ document.addEventListener('DOMContentLoaded', () => {
     // Since the splits expand, we use mouseenter / mouseleave on the individual splits
     if (splitLeft && splitRight && container) {
         
-        splitLeft.addEventListener('mouseenter', () => {
-            container.classList.add('hover-left');
-        });
+        const contentLeft = splitLeft.querySelector('.split-content');
+        const contentRight = splitRight.querySelector('.split-content');
 
-        splitLeft.addEventListener('mouseleave', () => {
-             container.classList.remove('hover-left');
-        });
+        if (contentLeft && contentRight) {
+            contentLeft.addEventListener('mouseenter', () => {
+                container.classList.add('hover-left');
+            });
 
-        splitRight.addEventListener('mouseenter', () => {
-            container.classList.add('hover-right');
-        });
+            contentLeft.addEventListener('mouseleave', () => {
+                 container.classList.remove('hover-left');
+            });
 
-        splitRight.addEventListener('mouseleave', () => {
-            container.classList.remove('hover-right');
-        });
+            contentRight.addEventListener('mouseenter', () => {
+                container.classList.add('hover-right');
+            });
+
+            contentRight.addEventListener('mouseleave', () => {
+                container.classList.remove('hover-right');
+            });
+        }
     }
 
     // Optional: add slight mousemove parallax on the container if we want extra flair
     // for now sticking to the robust CSS driven split layout
 
     // =========================================
-    // Roadmap Animations GSAP
+    // Scroll Animations GSAP
     // =========================================
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
+
+        // ── About Me Animations ──
+        const aboutSection = document.querySelector('.about-section');
+        if (aboutSection) {
+            gsap.from(".about-image-wrapper", {
+                scrollTrigger: {
+                    trigger: ".about-section",
+                    start: "top 75%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+            gsap.from(".about-content-split > *", {
+                scrollTrigger: {
+                    trigger: ".about-section",
+                    start: "top 75%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
+        }
+
+        // ── Education Roadmap Animations ──
 
         // Animate the vertical line drawing downwards
         gsap.to(".roadmap-line-progress", {
@@ -68,11 +101,59 @@ document.addEventListener('DOMContentLoaded', () => {
         roadmapItems.forEach((item, index) => {
             ScrollTrigger.create({
                 trigger: item,
-                start: "top 75%", // Triggers when the top of the item hits 75% down the viewport
+                start: "top 80%",
                 onEnter: () => item.classList.add('active'),
-                // Optional: remove if you want them to undisplay when scrolling back up
-                // onLeaveBack: () => item.classList.remove('active') 
             });
+        });
+
+        // ── Working Experience Animations ──
+
+        // Animate the experience vertical line
+        gsap.to(".experience-line-progress", {
+            scrollTrigger: {
+                trigger: ".experience-container",
+                start: "top center",
+                end: "bottom center",
+                scrub: 1
+            },
+            height: "100%",
+            ease: "none"
+        });
+
+        // Loop through each experience item and trigger it
+        const expItems = document.querySelectorAll('.exp-item');
+        expItems.forEach((item, index) => {
+            ScrollTrigger.create({
+                trigger: item,
+                start: "top 80%",
+                onEnter: () => item.classList.add('active'),
+            });
+        });
+    }
+
+    // =========================================
+    // Theme Toggle Logic
+    // =========================================
+    const themeToggleBtn = document.getElementById('themeToggle');
+    if (themeToggleBtn) {
+        // Check for saved theme
+        const savedTheme = localStorage.getItem('portfolio_theme');
+        if (savedTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            let newTheme = 'dark';
+            
+            if (currentTheme !== 'light') {
+                newTheme = 'light';
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            
+            localStorage.setItem('portfolio_theme', newTheme);
         });
     }
 
