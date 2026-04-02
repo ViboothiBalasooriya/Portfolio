@@ -44,6 +44,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Optional: add slight mousemove parallax on the container if we want extra flair
     // for now sticking to the robust CSS driven split layout
+
+    // =========================================
+    // Roadmap Animations GSAP
+    // =========================================
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate the vertical line drawing downwards
+        gsap.to(".roadmap-line-progress", {
+            scrollTrigger: {
+                trigger: ".roadmap-container",
+                start: "top center",
+                end: "bottom center",
+                scrub: 1
+            },
+            height: "100%",
+            ease: "none"
+        });
+
+        // Loop through each roadmap item and trigger it when it comes into view
+        const roadmapItems = document.querySelectorAll('.roadmap-item');
+        roadmapItems.forEach((item, index) => {
+            ScrollTrigger.create({
+                trigger: item,
+                start: "top 75%", // Triggers when the top of the item hits 75% down the viewport
+                onEnter: () => item.classList.add('active'),
+                // Optional: remove if you want them to undisplay when scrolling back up
+                // onLeaveBack: () => item.classList.remove('active') 
+            });
+        });
+    }
+
 });
 
 // Fix for Browser Back Button (Back-Forward Cache)
