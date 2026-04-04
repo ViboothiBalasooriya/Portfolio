@@ -131,32 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Theme Toggle logic removed.
+    
     // =========================================
-    // Theme Toggle Logic
-    // =========================================
-    const themeToggleBtn = document.getElementById('themeToggle');
-    if (themeToggleBtn) {
-        // Check for saved theme
-        const savedTheme = localStorage.getItem('portfolio_theme');
-        if (savedTheme === 'light') {
-            document.documentElement.setAttribute('data-theme', 'light');
-        }
-
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            let newTheme = 'dark';
-            
-            if (currentTheme !== 'light') {
-                newTheme = 'light';
-                document.documentElement.setAttribute('data-theme', 'light');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            
-            localStorage.setItem('portfolio_theme', newTheme);
-        });
-    }
-
 });
 
 // Fix for Browser Back Button (Back-Forward Cache)
