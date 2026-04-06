@@ -4,42 +4,46 @@
    Design Tokens
 ========================================= */
 :root {
-  --primary: #ffffff;
-  --bg: #000000;
-  --accent-dev: #00d0ff;
-  --accent-des: #ff00a0;
-  --muted: rgba(255, 255, 255, 0.45);
-  --text-secondary: rgba(255, 255, 255, 0.65);
-  --border: rgba(255, 255, 255, 0.07);
-  --glass: rgba(7, 7, 16, 0.6);
-  --glass-card: rgba(255, 255, 255, 0.025);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --hero-vignette: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.75) 50%, #000000 100%);
-  --roadmap-fade1: rgba(0, 208, 255, 0.04);
-  --roadmap-fade2: rgba(7, 7, 16, 0.95);
-  --exp-fade1: rgba(255, 0, 160, 0.04);
-  --overlay-dark: rgba(7, 7, 16, 0.8);
-  --node-dot-color: rgba(255, 255, 255, 0.2);
+  --primary: #121212;
+  --bg: #f5f5f7;
+  --muted: rgba(0, 0, 0, 0.6);
+  --text-secondary: rgba(0, 0, 0, 0.75);
+  --accent-dev: #0077aa;
+  --accent-des: #cc0088;
+  --border: rgba(0, 0, 0, 0.1);
+  --glass: rgba(255, 255, 255, 0.8);
+  --glass-card: rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --hero-vignette: radial-gradient(circle at center, rgba(245, 245, 247, 0.7) 0%, rgba(245, 245, 247, 0.9) 60%, #f5f5f7 100%);
+  --roadmap-fade1: #f5f5f7;
+  --roadmap-fade2: #f5f5f7;
+  --exp-fade1: #f5f5f7;
+  --overlay-dark: rgba(255, 255, 255, 0.85);
+  --node-dot-color: rgba(0, 0, 0, 0.15);
+  --title-gradient: linear-gradient(135deg, #121212 0%, rgba(0, 0, 0, 0.7) 100%);
   --t-slow: 0.9s cubic-bezier(0.25, 1, 0.5, 1);
   --t-fast: 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --t-bounce: 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-[data-theme="light"] {
-  --primary: #121212;
-  --bg: #f5f5f7;
-  --muted: rgba(0, 0, 0, 0.6);
-  --text-secondary: rgba(0, 0, 0, 0.75);
-  --border: rgba(0, 0, 0, 0.1);
-  --glass: rgba(255, 255, 255, 0.8);
-  --glass-card: rgba(0, 0, 0, 0.03);
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --hero-vignette: radial-gradient(circle at center, rgba(245, 245, 247, 0.4) 0%, rgba(245, 245, 247, 0.85) 50%, #f5f5f7 100%);
-  --roadmap-fade1: rgba(0, 208, 255, 0.08);
-  --roadmap-fade2: rgba(255, 255, 255, 0.9);
-  --exp-fade1: rgba(255, 0, 160, 0.08);
-  --overlay-dark: rgba(255, 255, 255, 0.85);
-  --node-dot-color: rgba(0, 0, 0, 0.15);
+[data-theme="dark"] {
+  --primary: #ffffff;
+  --bg: #000000;
+  --muted: rgba(255, 255, 255, 0.45);
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --accent-dev: #00d0ff;
+  --accent-des: #ff00a0;
+  --border: rgba(255, 255, 255, 0.07);
+  --glass: rgba(10, 10, 10, 0.6);
+  --glass-card: rgba(255, 255, 255, 0.025);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --hero-vignette: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.75) 50%, #000000 100%);
+  --roadmap-fade1: rgba(255, 255, 255, 0.02);
+  --roadmap-fade2: rgba(10, 10, 10, 0.95);
+  --exp-fade1: rgba(255, 255, 255, 0.02);
+  --overlay-dark: rgba(10, 10, 10, 0.8);
+  --node-dot-color: rgba(255, 255, 255, 0.2);
+  --title-gradient: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
 }
 
 *,
@@ -163,6 +167,18 @@ body::after {
    Main Container
 ========================================= */
 .hero-container {
+  /* Force dark mode tokens within Hero Section ONLY */
+  --primary: #ffffff;
+  --bg: #000000;
+  --muted: rgba(255, 255, 255, 0.5);
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --accent-dev: #00d0ff;
+  --accent-des: #ff00a0;
+  --border: rgba(255, 255, 255, 0.1);
+  --glass: rgba(10, 10, 10, 0.6);
+  --hero-vignette: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.75) 50%, #000000 100%);
+  --overlay-dark: rgba(10, 10, 10, 0.8);
+
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -175,6 +191,7 @@ body::after {
   background-position: center 30%;
   background-repeat: no-repeat;
   background-color: var(--bg);
+  color: var(--primary);
 }
 
 /* Dark vignette over full.png to make white text readable */
@@ -221,11 +238,12 @@ body::after {
   opacity: 0.15;
 }
 
-[data-theme="light"] .orb-left {
-  opacity: 0.25;
+[data-theme="dark"] .orb-left {
+  opacity: 0.15;
 }
-[data-theme="light"] .orb-right {
-  opacity: 0.25;
+
+[data-theme="dark"] .orb-right {
+  opacity: 0.15;
 }
 
 .hero-container.hover-left .orb-left {
@@ -293,36 +311,7 @@ body::after {
   pointer-events: auto;
 }
 
-/* Theme Toggle */
-.theme-toggle {
-  background: none;
-  border: none;
-  color: var(--muted);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  border-radius: 50%;
-  transition: color var(--t-fast), background var(--t-fast);
-}
-
-.theme-toggle:hover {
-  color: var(--primary);
-  background: var(--border);
-}
-
-.theme-toggle .moon-icon {
-  display: none;
-}
-
-[data-theme="light"] .theme-toggle .sun-icon {
-  display: none;
-}
-
-[data-theme="light"] .theme-toggle .moon-icon {
-  display: block;
-}
+/* Theme Toggle Removed */
 
 .top-hint {
   display: flex;
@@ -421,7 +410,7 @@ body::after {
   z-index: 0;
 }
 
-.left .split-bg  {
+.left .split-bg {
   background-image: url('../images/left.png');
   background-position: right 20%;
 }
@@ -542,6 +531,7 @@ body::after {
   letter-spacing: -0.01em;
   margin-bottom: 1.5rem;
   display: flex;
+  color: var(--primary);
 }
 
 .split-title span {
@@ -718,6 +708,7 @@ body::after {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   transition: border-color var(--t-slow), box-shadow var(--t-slow), background var(--t-slow);
   white-space: nowrap;
+  color: var(--primary);
 }
 
 .hero-container.hover-left .pill-inner {
@@ -869,10 +860,12 @@ body::after {
     top: 5px;
     opacity: 1;
   }
+
   50% {
     top: 15px;
     opacity: 0;
   }
+
   100% {
     top: 5px;
     opacity: 0;
@@ -881,7 +874,8 @@ body::after {
 
 .hero-container.hover-left .scroll-indicator,
 .hero-container.hover-right .scroll-indicator {
-  opacity: 0; /* Hide when hovering splits to keep it clean */
+  opacity: 0;
+  /* Hide when hovering splits to keep it clean */
 }
 
 /* =========================================
@@ -1038,10 +1032,20 @@ body::after {
    About Me Section
 ========================================= */
 .about-section {
+  /* Force dark mode */
+  --primary: #ffffff;
+  --bg: #000000;
+  --muted: rgba(255, 255, 255, 0.55);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --glass-card: rgba(20, 20, 20, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --title-gradient: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
+
   position: relative;
   width: 100vw;
   padding: 8rem 8%;
   background: var(--bg);
+  color: var(--primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1116,8 +1120,13 @@ body::after {
 }
 
 @keyframes floatGlow {
-  0% { transform: scale(1) translate(0, 0); }
-  100% { transform: scale(1.2) translate(10%, 10%); }
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  100% {
+    transform: scale(1.2) translate(10%, 10%);
+  }
 }
 
 .about-content-split {
@@ -1180,18 +1189,29 @@ body::after {
    Education Roadmap Section
 ========================================= */
 .roadmap-section {
+  /* Force dark section */
+  --bg: #0a0a0a;
+  --primary: #ffffff;
+  --muted: rgba(255, 255, 255, 0.55);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --accent-dev: #00d0ff;
+  --accent-des: #ff00a0;
+  --glass-card: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --title-gradient: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.6) 100%);
+  --node-dot-color: rgba(255, 255, 255, 0.2);
+
   position: relative;
   width: 100vw;
   min-height: 100vh;
   padding: 8rem 5%;
-  background: radial-gradient(ellipse at top center, var(--roadmap-fade1) 0%, transparent 50%),
-              radial-gradient(circle at top, var(--roadmap-fade2), var(--bg));
+  background: #0a0a0a;
+  color: var(--primary);
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 10;
   overflow: hidden;
-  transition: background 0.5s ease;
 }
 
 /* Decorative floating particles */
@@ -1224,8 +1244,15 @@ body::after {
 }
 
 @keyframes floatOrb {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-30px) scale(1.1); }
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.1);
+  }
 }
 
 .roadmap-header {
@@ -1250,7 +1277,7 @@ body::after {
   text-transform: uppercase;
   letter-spacing: -0.02em;
   color: var(--primary);
-  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+  background: var(--title-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1315,8 +1342,8 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg);
-  border: 1px solid var(--glass-border);
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   z-index: 2;
   transition: border-color var(--t-slow), transform var(--t-fast);
 }
@@ -1371,8 +1398,17 @@ body::after {
 }
 
 @keyframes ringPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.3); opacity: 0; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
 }
 
 .roadmap-item.active .node-glow {
@@ -1402,14 +1438,13 @@ body::after {
 
 /* ── Roadmap Content Cards ── */
 .roadmap-content {
-  background: var(--glass-card);
-  border: 1px solid var(--glass-border);
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 2rem 2.5rem;
   border-radius: 20px;
   flex: 1;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition: transform var(--t-fast), border-color var(--t-fast), background var(--t-fast), box-shadow var(--t-fast);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -1422,7 +1457,7 @@ body::after {
   left: -100%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
   transition: left 0.6s ease;
   pointer-events: none;
 }
@@ -1432,14 +1467,15 @@ body::after {
 }
 
 .roadmap-item.active .roadmap-content:hover {
-  transform: translateX(8px) translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(0, 208, 255, 0.04);
+  transform: translateX(6px) translateY(-3px);
+  border-color: rgba(0, 208, 255, 0.4);
+  background: #1a1a1a;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 208, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 .roadmap-item:nth-child(even).active .roadmap-content:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(255, 0, 160, 0.04);
+  border-color: rgba(255, 0, 160, 0.4);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 0, 160, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 /* Card top row: year + badge */
@@ -1473,15 +1509,15 @@ body::after {
 }
 
 .badge-active {
-  background: rgba(0, 208, 255, 0.1);
-  color: var(--accent-dev);
-  border: 1px solid rgba(0, 208, 255, 0.25);
+  background: rgba(0, 208, 255, 0.12);
+  color: #00d0ff;
+  border: 1px solid rgba(0, 208, 255, 0.35);
 }
 
 .badge-complete {
-  background: var(--glass-card);
-  color: var(--muted);
-  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Icon + Title row */
@@ -1501,10 +1537,11 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--glass-card);
-  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
-  transition: transform var(--t-fast), box-shadow var(--t-fast);
+  transition: transform var(--t-fast), box-shadow var(--t-fast), filter var(--t-fast);
+  filter: grayscale(60%);
 }
 
 .roadmap-item.active .roadmap-content:hover .roadmap-icon {
@@ -1515,21 +1552,21 @@ body::after {
 .roadmap-degree {
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--primary);
+  color: #ffffff;
   margin-bottom: 0.3rem;
   line-height: 1.3;
 }
 
 .roadmap-place {
   font-size: 0.92rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.65);
   line-height: 1.5;
 }
 
 /* Description text */
 .roadmap-desc {
   font-size: 0.92rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.55);
   line-height: 1.7;
   margin-bottom: 1.25rem;
 }
@@ -1550,9 +1587,9 @@ body::after {
   letter-spacing: 0.1em;
   padding: 0.3rem 0.8rem;
   border-radius: 100px;
-  background: var(--glass-card);
-  border: 1px solid var(--glass-border);
-  color: var(--muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.55);
   transition: all var(--t-fast);
 }
 
@@ -1572,18 +1609,29 @@ body::after {
    Working Experience Section
 ========================================= */
 .experience-section {
+  /* Force dark section */
+  --bg: #0a0a0a;
+  --primary: #ffffff;
+  --muted: rgba(255, 255, 255, 0.55);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --accent-dev: #00d0ff;
+  --accent-des: #ff00a0;
+  --glass-card: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --title-gradient: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.6) 100%);
+  --node-dot-color: rgba(255, 255, 255, 0.2);
+
   position: relative;
   width: 100vw;
   min-height: 100vh;
   padding: 8rem 5%;
-  background: radial-gradient(ellipse at bottom center, var(--exp-fade1) 0%, transparent 50%),
-              radial-gradient(circle at bottom, var(--roadmap-fade2), var(--bg));
+  background: #0a0a0a;
+  color: var(--primary);
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 10;
   overflow: hidden;
-  transition: background 0.5s ease;
 }
 
 .experience-section::before {
@@ -1677,8 +1725,8 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg);
-  border: 1px solid var(--glass-border);
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   z-index: 2;
   transition: border-color var(--t-slow), transform var(--t-fast);
 }
@@ -1754,14 +1802,13 @@ body::after {
 
 /* Experience Content Cards */
 .exp-content {
-  background: var(--glass-card);
-  border: 1px solid var(--glass-border);
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 2rem 2.5rem;
   border-radius: 20px;
   flex: 1;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition: transform var(--t-fast), border-color var(--t-fast), background var(--t-fast), box-shadow var(--t-fast);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -1773,7 +1820,7 @@ body::after {
   left: -100%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
   transition: left 0.6s ease;
   pointer-events: none;
 }
@@ -1783,14 +1830,15 @@ body::after {
 }
 
 .exp-item.active .exp-content:hover {
-  transform: translateX(8px) translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(255, 0, 160, 0.04);
+  transform: translateX(6px) translateY(-3px);
+  border-color: rgba(255, 0, 160, 0.4);
+  background: #1a1a1a;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 0, 160, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 .exp-item:nth-child(even).active .exp-content:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(0, 208, 255, 0.04);
+  border-color: rgba(0, 208, 255, 0.4);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 208, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 /* Card top row */
@@ -1826,10 +1874,11 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--glass-card);
-  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
-  transition: transform var(--t-fast), box-shadow var(--t-fast);
+  transition: transform var(--t-fast), box-shadow var(--t-fast), filter var(--t-fast);
+  filter: grayscale(60%);
 }
 
 .exp-item.active .exp-content:hover .exp-icon {
@@ -1840,20 +1889,20 @@ body::after {
 .exp-role {
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--primary);
+  color: #ffffff;
   margin-bottom: 0.3rem;
   line-height: 1.3;
 }
 
 .exp-company {
   font-size: 0.92rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.65);
   line-height: 1.5;
 }
 
 .exp-desc {
   font-size: 0.92rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.55);
   line-height: 1.7;
   margin-bottom: 1.25rem;
 }
@@ -1872,7 +1921,7 @@ body::after {
   align-items: center;
   gap: 0.75rem;
   font-size: 0.88rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.65);
   line-height: 1.5;
 }
 
@@ -1903,6 +1952,7 @@ body::after {
    Roadmap & Experience Responsive
 ========================================= */
 @media (max-width: 768px) {
+
   .roadmap-section,
   .experience-section {
     padding: 5rem 5%;
@@ -1967,6 +2017,7 @@ body::after {
 }
 
 @media (max-width: 480px) {
+
   .roadmap-icon-row,
   .exp-icon-row {
     flex-direction: column;
